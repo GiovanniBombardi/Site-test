@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <style>
+        body {
+            background-color: black;
+            color: purple;
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: #1a1a1a;
+            z-index: 11;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px 0 0;
+        }
+
+        .home-button {
+            background-color: purple;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: lightpurple;
+            text-decoration: none;
+            margin-left: 15px;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: #333;
+        }
+
+        .content {
+            padding: 60px 20px 20px 20px;
+            text-align: center;
+        }
+
+        .login-container {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+
+        .login-text {
+            margin-right: 5px;
+        }
+
+        .login-image {
+            width: 40px;
+            height: 40px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info img {
+            width: 25px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        footer {
+            background-color: black;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center; /* Adicionado para centralizar o texto */
+        }
+
+        footer a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .toggle-menu {
+            position: absolute;
+            top: 5px;
+            left: 50px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            transition: left 0.3s ease;
+        }
+
+        .toggle-menu.moved {
+            left: 210px;
+        }
+
+        nav.collapsed {
+            width: 0;
+            padding: 20px 0;
+        }
+
+        nav.collapsed a {
+            left: -200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="home-button" onclick="goToHome()">H</button>
+        <nav>
+            <a href="/register">Register</a>
+            <a href="/contact">Contacts</a>
+            <div class="login-container" onclick="goToLogin()">
+                <a href="/login" class="login-text">Login</a>
+                <img src="https://cdn.discordapp.com/attachments/1351668931751972877/1352376436291276872/download.jpeg?ex=67ddca34&is=67dc78b4&hm=b9db6895ab9759079ea874363997d66fbb43471c7f9d6bfc8c3f501e0c57a520&" alt="Login" class="login-image">
+            </div>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Entre em contato conosco</h1>
+        <div class="contact-message">
+            <p>Se você tiver alguma dúvida, entre em contato conosco:</p>
+        </div>
+        <div class="contact-info">
+            <a href="https://wa.me/5519999999999">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/240px-WhatsApp.svg.png" alt="WhatsApp">
+                (19) 99999-9999
+            </a>
+            <br>
+            <a href="mailto:test@test.com">test@test.com</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Contacts 2025</p>
+    </footer>
+
+    <script>
+        function goToHome() {
+            window.location.href = "/";
+        }
+
+        function goToLogin() {
+            window.location.href = "/login";
+        }
+    </script>
+</body>
+</html>

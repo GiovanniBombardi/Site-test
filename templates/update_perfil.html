@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Perfil</title>
+    <style>
+        body {
+            background-color: black;
+            color: purple;
+            font-family: sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .update-profile-container {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        .update-profile-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .update-profile-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .update-profile-container input[type="text"],
+        .update-profile-container input[type="email"],
+        .update-profile-container input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background-color: #333;
+            color: white;
+        }
+
+        .update-profile-container button {
+            background-color: purple;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .update-profile-container button:hover {
+            background-color: #800080;
+        }
+    </style>
+</head>
+<body>
+    <div class="update-profile-container">
+        <h2>Update Perfil</h2>
+        <form action="/atualizar_perfil" method="POST">
+            <label for="username">New Username:</label>
+            <input type="text" id="username" name="username" value="{{ user.username }}">
+
+            <label for="email">New Email:</label>
+            <input type="email" id="email" name="email" value="{{ user.email }}">
+
+            <label for="password">New password:</label>
+            <input type="password" id="password" name="password">
+
+            <button type="submit">Save changes</button>
+        </form>
+    </div>
+</body>
+</html>
