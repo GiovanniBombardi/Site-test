@@ -1,5 +1,6 @@
-from flask import Flask, request, redirect, url_for, session 
+from flask import Flask, request, redirect, url_for, session
 import sqlite3
+from flask_login import login_required
 
 app = Flask(__name__)
 app.secret_key = 'chave_secreta'

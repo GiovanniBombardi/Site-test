@@ -50,6 +50,7 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('home'))
 
+@login_required
 @app.route('/perfil/<user>')
 def perfil(user):
     conn = sqlite3.connect('usuarios.db')
