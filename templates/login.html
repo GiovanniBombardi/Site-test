@@ -120,6 +120,12 @@
         nav.collapsed a {
             left: -200px;
         }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -132,7 +138,7 @@
 
     <div class="form-container">
         <h2>Login</h2>
-        <form action="/login" method="post">
+        <form action="/login" method="post" id="loginForm">
             <label for="username">User:</label><br>
             <input type="text" id="username" name="username" required><br><br>
             <label for="password">Password:</label><br>
@@ -140,6 +146,7 @@
             <input type="submit" value="Login">
         </form>
         <p>Não tem uma conta? <a href="/register">Register</a></p>
+        <div id="errorMessage" class="error-message" style="display: none;">Incorrect username or password</div>
     </div>
 
     <script>
@@ -147,9 +154,21 @@
             window.location.href = "/";
         }
 
-        function goToRegister() {
-            window.location.href = "/register";
-        }
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            // Simulação de verificação de login (substitua com sua lógica real)
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Aqui você faria a verificação no banco de dados.
+            // Para este exemplo, vamos simular um erro com username "erro" e password "erro"
+            if (username === "erro" && password === "erro") {
+                event.preventDefault(); // Evita a submissão do formulário
+                document.getElementById('errorMessage').style.display = 'block'; // Mostra a mensagem de erro
+            } else {
+                document.getElementById('errorMessage').style.display = 'none'; // Esconde a mensagem de erro caso o login seja correto.
+            }
+        });
+
     </script>
 </body>
 </html>

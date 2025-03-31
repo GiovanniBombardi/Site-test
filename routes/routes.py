@@ -6,7 +6,7 @@ def home():
     username = session.get('username') 
     return render_template('home.html', username=username)
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET'])
 def contacts():
     return render_template("contact.html")
 
